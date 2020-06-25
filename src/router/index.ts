@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+
 import Base from '../views/Base.vue'
+import Home from '../components/Home.vue'
+import Posts from '../views/Posts.vue'
+import Meta from '../views/Meta.vue'
 
 Vue.use(VueRouter)
 
@@ -8,15 +12,47 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'base',
-    component: Base
+    component: Base,
+    children: [
+      {
+        path: '/',
+        name: 'Home',
+        component: Home
+      },
+      {
+        path: '/about',
+        name: 'about',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import(/* webpackChunkName: "about" */ '../components/About.vue')
+      },
+      {
+        path: '/about/contact',
+        name: 'contact',
+        component: () => import(/* webpackChunkName: "about" */ '../components/Contact.vue')
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../components/About.vue')
+    path: '/a',
+    name: 'yield',
+    children: [
+
+    ]
+  },
+  {
+    path: '/meta',
+    name: 'meta',
+    component: Meta
+  },
+  {
+    path: '/posts',
+    name: 'posts',
+    component: Posts,
+    children: [
+      // for every post/child, create a route
+    ]
   }
 ]
 

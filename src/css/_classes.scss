@@ -1,0 +1,20 @@
+@use 'vars' as v;
+
+
+.bc-k-red { background-color: v.$k-red; }
+.bc-k-orange { background-color: v.$k-orange; }
+.bc-k-yellow { background-color: v.$k-yellow; }
+.bc-k-green { background-color: v.$k-green; }
+.bc-k-blue { background-color: v.$k-blue; }
+.bc-k-purple { background-color: v.$k-purple; }
+
+
+
+.c-k-red { color: v.$k-red; }
+.c-k-orange { color: v.$k-orange; }
+.c-k-yellow { color: v.$k-yellow; }
+.c-k-green { color: v.$k-green; }
+.c-k-blue { color: v.$k-blue; }
+.c-k-purple { color: v.$k-purple; }
+
+.c-k-white { color: v.$k-white; }

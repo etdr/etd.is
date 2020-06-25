@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Base</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Navbar/>
     <router-view/>
+    <div id="top-flex-spacer"/>
+    <Footer/>
   </div>
 </template>
 
 <script lang="ts">
 // import Post0 from './_posts/2020-06-22.md'
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
-  components: { }
+  components: {
+    Navbar,
+    Footer
+  }
 }
 </script>
 
@@ -30,29 +34,26 @@ html {
 
 body {
   margin: 0;
+  background-color: v.$k-white;
 
   font-family: v.$f-body;
   h1,h2,h3,h4,h5,h6 {
     font-family: v.$f-header;
+    //font-size: 500%;
   }
 }
 
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  //color: v.$k-darkgray;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#top-flex-spacer {
+  flex-grow: 1;
 }
 </style>

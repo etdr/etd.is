@@ -1,7 +1,7 @@
 <template>
   <nav>
     <ul>
-      <router-link to="/" class="c-k-white"><li>dte.is</li></router-link>
+      <router-link to="/" class="bc-k-black c-k-white"><li>dte.is</li></router-link>
       <li class="bc-k-red expandable-li"><router-link to="/about">me</router-link>
         <ul class="bc-k-red">
           <router-link to="/about"><li>about</li></router-link>
@@ -19,7 +19,8 @@
           <router-link to="/a/dabbler"><li>misc</li></router-link>
         </ul>
       </li>
-      <router-link to="/l"><li class="bc-k-green">lists</li></router-link>
+      <!-- <router-link to="/m"><li class="bc-k-yellow">music</li></router-link> -->
+      <!-- <router-link to="/l"><li class="bc-k-green">lists</li></router-link> -->
       <router-link to="/meta"><li class="bc-k-blue">site</li></router-link>
       <router-link to="/posts"><li class="bc-k-purple">posts</li></router-link>
     </ul>
@@ -38,7 +39,9 @@ export default Vue.extend({
 @use '../css/classes' as c;
 
 nav {
-  padding: 30px;
+  //padding: 30px;
+
+  width: 100%;
   font-size: 2rem;
   font-family: v.$f-header;
 
@@ -47,19 +50,22 @@ nav {
   ul {
     list-style-type: none;
     display: flex;
+    flex-direction: row;
     margin: 0;
     padding: 0;
 
     transition: all 0.4s ease-out;
 
     li {
-      margin: 0 1.4rem;
+      //margin: 0 1.4rem;
       padding: 2rem 5rem;
-      border-radius: 5px;
+      flex-grow: 1;
+      flex-shrink: 1;
     }
 
     a {
-
+      flex-grow: 1;
+      flex-shrink: 1;
       font-weight: bold;
       color: #2c3e50;
       text-decoration: none;
@@ -72,9 +78,8 @@ nav {
         }
 
       li {
-        margin: 0 1.4rem;
+        //margin: 0 1.4rem;
         padding: 2rem 5rem;
-        border-radius: 5px;
       }
     }
 

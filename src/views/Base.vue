@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
-    <router-view/>
-  </div>
+  <!-- <div class="home"> -->
+  <router-view/>
+  <!-- </div> -->
 </template>
 
 <script>
 // @ is an alias to /src
-import Home from '@/components/Home.vue'
+// import Home from '@/components/Home.vue'
 
 export default {
   name: 'Base',
@@ -16,9 +16,19 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+@use '../css/classes' as c;
+
 div.base-div {
   margin: 4rem auto;
-  width: 80rem;
+  min-width: 80rem;
+  align-items: center;
+  // justify-content: center;
+
+  h1 {
+    @extend .ts-k-red;
+    // text-shadow: -2rem 2rem 0 red;
+  }
 }
+
 </style>

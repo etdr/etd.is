@@ -2,7 +2,7 @@
   <div id="app">
     <Navbar/>
     <router-view/>
-    <div id="top-flex-spacer"/>
+    <div id="main-flex-spacer"/>
     <Footer/>
   </div>
 </template>
@@ -29,17 +29,27 @@ export default {
 }
 
 html {
+  margin: 0;
+  padding: 0;
   font-size: 10px;
+  width: 100%;
 }
 
 body {
   margin: 0;
-  background-color: v.$k-white;
+  width: 100%;
+
+  // background-color: v.$k-white;
 
   font-family: v.$f-body;
   h1,h2,h3,h4,h5,h6 {
     font-family: v.$f-header;
     //font-size: 500%;
+    margin: 0 0 4rem;
+  }
+
+  h1 {
+    font-size: 8rem;
   }
 }
 
@@ -51,9 +61,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  // min-width: 100rem;
+  width: 100%;
 }
 
-#top-flex-spacer {
+#main-flex-spacer {
   flex-grow: 1;
+}
+
+#home-page+#main-flex-spacer {
+  flex-grow: 0;
 }
 </style>

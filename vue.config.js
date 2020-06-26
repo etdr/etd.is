@@ -61,5 +61,35 @@ module.exports = {
           return fm(source)
         }
       })
+      .end()
+      .end()
+
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+
+    svgRule
+      // .include.add(process.cwd() + '/src/assets/icons').end()
+      .use('svgicon-loader')
+      .loader('@yzfe/vue-svgicon-loader')
+      .options({
+        idSeparator: '_',
+        svgFilePath: process.cwd() + '/src/assets/icons'
+      })
+      // .end()
+
+    config.module
+      .rule('vue')
+      // .test(/\.vue$/)
+      .use('vue-loader')
+      .loader('vue-loader')
+      .tap(options => {
+        options.transformAssetUrls = options.transformAssetUrls || {}
+        options.transformAssetUrls.icon = ['data']
+        return options
+        // transformAssetUrls: {
+        //   icon: 'data'
+        // }
+      })
+    // console.log(config.module)
   }
 }

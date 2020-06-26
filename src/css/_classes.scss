@@ -8,6 +8,8 @@
 .bc-k-blue { background-color: v.$k-blue; }
 .bc-k-purple { background-color: v.$k-purple; }
 
+.bc-k-black { background-color: v.$k-black; }
+
 
 
 .c-k-red { color: v.$k-red; }
@@ -18,3 +20,6 @@
 .c-k-purple { color: v.$k-purple; }
 
 .c-k-white { color: v.$k-white; }
+
+
+.ts-k-red { text-shadow: -.4rem .4rem 0 v.$k-red; }

@@ -12,6 +12,7 @@ footer {
   min-height: 4rem;
   background-color: v.$k-darkgray;
   text-align: center;
+  width: 100%;
 
   p {
     margin: 1rem auto 1rem;

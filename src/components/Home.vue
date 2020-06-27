@@ -1,7 +1,5 @@
 <template>
   <div class="base-page" id="home-page">
-    <div id="topblock">
-    </div>
     <h1>Eli T. Drumm</h1>
     <h3>{{ taglines[Math.floor(Math.random() * taglines.length)] }}</h3>
   </div>
@@ -37,8 +35,8 @@ div#home-page {
   flex-grow: 1;
 
   background: linear-gradient(-75deg, v.$k-red, v.$k-orange, v.$k-yellow, v.$k-green, v.$k-blue, v.$k-purple);
-  background-size: 800% 800%;
-  animation: homegrad 20s ease infinite;
+  background-size: 1200% 1200%;
+  animation: homegrad 40s ease infinite;
 
   @keyframes homegrad {
     0% {
@@ -54,14 +52,17 @@ div#home-page {
 
   h1 {
     margin: 8rem 2rem 1rem;
-    font-size: 14rem;
+    font-size: 18rem;
     color: #eeeeee;
+    mix-blend-mode: difference;
   }
 
   h3 {
-    font-size: 2.8rem;
+    font-size: 3.6rem;
     margin: -2rem 2rem 0;
-    color: #eeeeee
+    color: #eeeeee;
+    mix-blend-mode: hard-light;
+    text-align: right;
   }
 
   #topblock {

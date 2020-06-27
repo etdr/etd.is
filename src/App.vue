@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Navbar/>
-    <router-view/>
+    <transition name="main-slide" mode="out-in">
+      <router-view/>
+    </transition>
     <div id="main-flex-spacer"/>
     <Footer/>
   </div>
@@ -45,11 +47,12 @@ body {
   h1,h2,h3,h4,h5,h6 {
     font-family: v.$f-header;
     //font-size: 500%;
-    margin: 0 0 4rem;
+    margin: 4rem 0 2rem;
   }
 
   h1 {
     font-size: 8rem;
+    margin-top: 0;
   }
 
   h2 {
@@ -85,5 +88,18 @@ body {
 
 #home-page+#main-flex-spacer {
   flex-grow: 0;
+}
+
+.main-slide-enter-active {
+  transition: all .2s ease-in;
+}
+
+.main-slide-leave-active {
+  transition: all .2s ease-out;
+}
+
+.main-slide-enter, .main-slide-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

@@ -4,6 +4,7 @@
       <li v-for="[k, m] of postlist" :key="k">
         <h2><router-link :to='"/posts/"+k'>{{ m.attributes.title }}</router-link></h2>
         <h3>{{ formatDate(m.attributes.date) }}</h3>
+        <h4>{{ m.attributes.tags }}</h4>
       </li>
     </ul>
   </div>
@@ -51,6 +52,8 @@ export default Vue.extend({
     list-style-type: none;
 
     li {
+      margin: 0 0 4rem;
+
       h2 {
         font-size: 3rem;
         margin-bottom: 1rem;
@@ -59,7 +62,14 @@ export default Vue.extend({
         }
       }
       h3 {
+        margin: 0 0 1rem;
         font-size: 2rem;
+      }
+      h4 {
+        margin: 1rem 0 0;
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-style: italic;
       }
     }
   }

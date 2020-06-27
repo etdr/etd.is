@@ -3,8 +3,10 @@ import VueRouter, { RouteConfig } from 'vue-router'
 
 import Base from '../views/Base.vue'
 import Home from '../components/Home.vue'
+import Yield from '@/views/Yield.vue'
 import Posts from '../views/Posts.vue'
 import Meta from '../views/Meta.vue'
+import Post from '@/components/posts/Post.vue'
 
 Vue.use(VueRouter)
 
@@ -35,9 +37,43 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/a',
-    name: 'yield',
+    component: Yield,
     children: [
-
+      {
+        path: '/',
+        name: 'yield-index',
+        component: () => import(/* webpackChunkName: "yield-index" */ '@/components/yield/Index.vue')
+      },
+      {
+        path: 'developer',
+        name: 'yield-js',
+        component: () => import(/* webpackChunkName: "yield-js" */ '@/components/yield/JS.vue'),
+        redirect: { name: 'yield-index' }
+      },
+      {
+        path: 'data-scientist',
+        name: 'yield-ds',
+        component: () => import(/* webpackChunkName: "yield-ds" */ '@/components/yield/Data.vue'),
+        redirect: { name: 'yield-index' }
+      },
+      {
+        path: 'quasiacademecian',
+        name: 'yield-thesis',
+        component: () => import(/* webpackChunkName: "yield-thesis" */ '@/components/yield/Thesis.vue'),
+        redirect: { name: 'yield-index' }
+      },
+      {
+        path: 'musician',
+        name: 'yield-music',
+        component: () => import(/* webpackChunkName: "yield-music" */ '@/components/yield/Music.vue'),
+        redirect: { name: 'yield-index' }
+      },
+      {
+        path: 'dabbler',
+        name: 'yield-misc',
+        component: () => import(/* webpackChunkName: "yield-misc" */ '@/components/yield/Misc.vue'),
+        redirect: { name: 'yield-index' }
+      }
     ]
   },
   {
@@ -53,10 +89,27 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/posts',
-    name: 'posts',
     component: Posts,
+    // children: require.context('@/assets/posts', true, /\.md$/).keys().map((filename: string) => {
+    //   return ({
+    //     path: '/' + filename.replace(/\.md$/, '').replace(/\.\//, ''),
+    //     name: 'post-' + filename,
+    //     component: () => import('@/assets/posts/' + filename.replace(/\.md$/, ''))
+    //   })
+    // })
     children: [
-      // for every post/child, create a route
+      {
+        path: '/',
+        name: 'posts-index',
+        component: () => import(/* webpackChunkName: "posts-index" */ '@/components/posts/Index.vue')
+
+      },
+      {
+        path: ':filename',
+        props: true,
+        // component: () => import(/* webpackChunkName: "post" */ '@/components/posts/Post.vue')
+        component: Post
+      }
     ]
   }
 ]

@@ -59,6 +59,12 @@ body {
   p {
     font-size: 2rem;
   }
+
+  ul {
+    li {
+      font-size: 2rem;
+    }
+  }
 }
 
 #app {

@@ -107,7 +107,7 @@ export default Vue.extend({
   computed: {
     age: () => (((new Date().getTime() / 1000) - 614944800.0) / 31557600).toFixed(3),
     ageWhole: function () { return Math.floor(parseFloat(this.age)) },
-    ageFrac: function () { return approxFrac(1 / 10000000000, parseFloat(this.age) - Math.floor(parseFloat(this.age))) }
+    ageFrac: function () { return approxFrac(1 / 10000, parseFloat(this.age) - Math.floor(parseFloat(this.age))) }
   },
   mounted: () => {
     window.MathJax.typeset()

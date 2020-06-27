@@ -1,27 +1,31 @@
 <template>
   <div class="posts-div">
-    <h1>{{ title }}</h1>
-    <TestPost />
-    <router-view/>
+    <!-- <h1>Posts</h1> -->
+    <router-view />
+    <!-- <p>{{ onIndex ? 'yes on index' : 'no not on index' }}</p> -->
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import post from '@/assets/posts/2020-06-22.md'
+
 export default Vue.extend({
   name: 'posts',
-  components: {
-    TestPost: post.vue.component
-  },
-  data: () => ({
-    title: post.attributes.title
-  })
+  computed: {
+    onIndex: function () { return this.$route.path === '/posts' }
+  }
 })
 </script>
 
 <style lang="scss" scoped>
-.posts-div {
+@use '../css/classes' as c;
 
+.posts-div {
+  width: 80rem;
+  margin: 4rem auto;
+  align-items: center;
+  h1 {
+    @extend .ts-k-blue;
+  }
 }
 </style>

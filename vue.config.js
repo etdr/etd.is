@@ -1,3 +1,4 @@
+// import { Mode } from 'frontmatter-markdown-loader'
 
 // import markdownIt from 'markdown-it'
 const markdownIt = require('markdown-it')
@@ -12,7 +13,7 @@ const markdownItEmoji = require('markdown-it-emoji')
 const markdownItMark = require('markdown-it-mark')
 const markdownItAttrs = require('markdown-it-attrs')
 
-const fm = require('front-matter')
+// const fm = require('front-matter')
 
 // const markdown = markdownIt({
 //   html: true,
@@ -22,47 +23,65 @@ const fm = require('front-matter')
 //   wrapper: 'article'
 // })
 
-// markdown.use(markdownItSub)
-//   .use(markdownItSup)
-//   .use(markdownItFootnote)
-//   .use(markdownItDeflist)
-//   .use(markdownItEmoji)
-//   .use(markdownItMark)
-
 module.exports = {
   chainWebpack: config => {
+    // config.module.rule('md')
+    //   .test(/\.md$/)
+    //   .use('vue-loader')
+    //   .loader('vue-loader')
+    //   .end()
+    //   .use('vue-markdown-loader')
+    //   .loader('vue-markdown-loader/lib/markdown-compiler')
+    //   // .options({
+    //   //   raw: true,
+    //   //   wrapper: 'article'
+    //   // })
+    //   // .options(markdown)
+    //   // .options({
+    //   //   markdown,
+    //   //   raw: true,
+    //   //   wrapper: 'article'
+    //   // })
+    //   .options({
+    //     raw: true,
+    //     wrapper: 'article',
+    //     typographer: true,
+    //     breaks: false,
+    //     use: [
+    //       markdownItSub, markdownItSup, markdownItFootnote, markdownItDeflist,
+    //       markdownItEmoji, markdownItMark, markdownItAttrs
+    //     ]
+    //     // preprocess: function (markdownIt, source) {
+    //     // return fm(source)
+    //     //  return source
+    //     // }
+    //   })
+    //   .end()
+    //   .use('front-matter-loader')
+    //   .loader('frontmatter-markdown-loader')
+    //   .options({
+    //     mode: ['body', 'meta']
+    //   })
+    //   .end()
+    //   .end()
+
     config.module.rule('md')
       .test(/\.md$/)
-      .use('vue-loader')
-      .loader('vue-loader')
-      .end()
-      .use('vue-markdown-loader')
-      .loader('vue-markdown-loader/lib/markdown-compiler')
-      // .options({
-      //   raw: true,
-      //   wrapper: 'article'
-      // })
-      // .options(markdown)
-      // .options({
-      //   markdown,
-      //   raw: true,
-      //   wrapper: 'article'
-      // })
+      .use('frontmatter-markdown-loader')
+      .loader('frontmatter-markdown-loader')
       .options({
-        raw: true,
-        wrapper: 'article',
-        typographer: true,
-        breaks: false,
-        use: [
-          markdownItSub, markdownItSup, markdownItFootnote, markdownItDeflist,
-          markdownItEmoji, markdownItMark, markdownItAttrs
-        ],
-        preprocess: function (markdownIt, source) {
-          return fm(source)
-        }
+        mode: ['body', 'attributes', 'meta', 'vue-component'],
+        markdownIt: markdownIt({
+          html: true,
+          breaks: false,
+          typographer: true
+        }).use(markdownItSub)
+          .use(markdownItSup)
+          .use(markdownItFootnote)
+          .use(markdownItDeflist)
+          .use(markdownItEmoji)
+          .use(markdownItMark)
       })
-      .end()
-      .end()
 
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()

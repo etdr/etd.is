@@ -22,6 +22,7 @@ export default {
 div.base-div {
   margin: 4rem auto;
   min-width: 80rem;
+  width: 80rem;
   align-items: center;
   // justify-content: center;
 

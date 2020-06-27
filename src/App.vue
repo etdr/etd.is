@@ -51,6 +51,14 @@ body {
   h1 {
     font-size: 8rem;
   }
+
+  h2 {
+    font-size: 6rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
 }
 
 #app {

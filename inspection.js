@@ -66,7 +66,7 @@
             loader: '/home/winfield/etd.is0/etd.is/node_modules/cache-loader/dist/cjs.js',
             options: {
               cacheDirectory: '/home/winfield/etd.is0/etd.is/node_modules/.cache/vue-loader',
-              cacheIdentifier: '30b31b6e'
+              cacheIdentifier: '91b8b9d8'
             }
           },
           /* config.module.rule('vue').use('vue-loader') */
@@ -77,7 +77,7 @@
                 whitespace: 'condense'
               },
               cacheDirectory: '/home/winfield/etd.is0/etd.is/node_modules/.cache/vue-loader',
-              cacheIdentifier: '30b31b6e',
+              cacheIdentifier: '91b8b9d8',
               transformAssetUrls: {
                 icon: [
                   'data'
@@ -1537,7 +1537,7 @@
             loader: '/home/winfield/etd.is0/etd.is/node_modules/cache-loader/dist/cjs.js',
             options: {
               cacheDirectory: '/home/winfield/etd.is0/etd.is/node_modules/.cache/babel-loader',
-              cacheIdentifier: 'afa6333c'
+              cacheIdentifier: '7bc3ca56'
             }
           },
           /* config.module.rule('js').use('babel-loader') */
@@ -1567,7 +1567,7 @@
                 '.tsx'
               ],
               cache: true,
-              cacheIdentifier: '72c155c1',
+              cacheIdentifier: '74115dbc',
               emitWarning: false,
               emitError: false,
               eslintPath: '/home/winfield/etd.is0/etd.is/node_modules/eslint',
@@ -1585,7 +1585,7 @@
             loader: '/home/winfield/etd.is0/etd.is/node_modules/cache-loader/dist/cjs.js',
             options: {
               cacheDirectory: '/home/winfield/etd.is0/etd.is/node_modules/.cache/ts-loader',
-              cacheIdentifier: 'bfa2ae74'
+              cacheIdentifier: '67980cec'
             }
           },
           /* config.module.rule('ts').use('babel-loader') */
@@ -1614,7 +1614,7 @@
             loader: '/home/winfield/etd.is0/etd.is/node_modules/cache-loader/dist/cjs.js',
             options: {
               cacheDirectory: '/home/winfield/etd.is0/etd.is/node_modules/.cache/ts-loader',
-              cacheIdentifier: 'bfa2ae74'
+              cacheIdentifier: '67980cec'
             }
           },
           /* config.module.rule('tsx').use('babel-loader') */
@@ -1662,10 +1662,17 @@
                 function () { /* omitted long function */ },
                 function () { /* omitted long function */ },
                 function () { /* omitted long function */ }
-              ],
-              preprocess: function (markdownIt, source) {
-                return fm(source)
-              }
+              ]
+            }
+          },
+          /* config.module.rule('md').use('front-matter-loader') */
+          {
+            loader: 'frontmatter-markdown-loader',
+            options: {
+              mode: [
+                'body',
+                'meta'
+              ]
             }
           }
         ]

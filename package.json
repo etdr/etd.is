@@ -9,9 +9,11 @@
     "gen-icons": "vsvg -s ./icons -t ./src/assets/icons"
   },
   "dependencies": {
+    "@types/mathjax": "0.0.36",
     "@yzfe/vue-svgicon-loader": "^1.0.0-alpha.0",
     "core-js": "^3.6.5",
     "front-matter": "^4.0.2",
+    "frontmatter-markdown-loader": "^3.6.0",
     "markdown-it": "^11.0.0",
     "markdown-it-attrs": "^3.0.3",
     "markdown-it-deflist": "^2.0.3",
@@ -20,10 +22,12 @@
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
+    "mathjax": "^3.0.5",
     "register-service-worker": "^1.7.1",
+    "requirejs": "^2.3.6",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
-    "vue-markdown-loader": "^2.4.1",
+    "vue-markdown-loader": "file:../../repos/vue-markdown-loader",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",
     "vue-svgicon": "^4.0.0-alpha.3"

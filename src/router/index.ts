@@ -11,12 +11,11 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'base',
     component: Base,
     children: [
       {
         path: '/',
-        name: 'Home',
+        name: 'home',
         component: Home
       },
       {
@@ -43,8 +42,14 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/meta',
-    name: 'meta',
-    component: Meta
+    component: Meta,
+    children: [
+      {
+        path: '/',
+        name: 'site',
+        component: () => import(/* webpackChunkName: "about" */ '@/components/site/Site.vue')
+      }
+    ]
   },
   {
     path: '/posts',

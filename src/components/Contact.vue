@@ -18,6 +18,9 @@
       <li><icon data="@/assets/icons/telegram.svg" width="200" height="200" original/>
         <div><p>Telegram</p> <p><a href="https://t.me/etdru" target="_blank">@etdru</a></p></div>
       </li>
+      <li><icon data="@/assets/icons/signal.svg" width="200" height="200" original/>
+        <div><p>Signal</p> <p>(tied to phone number)</p></div>
+      </li>
     </ul>
 
     <h2>professional</h2>
@@ -60,6 +63,9 @@
       <li><icon data="@/assets/icons/soundcloud.svg" width="200" height="200" original/>
         <div><p>SoundCloud</p> <p><a href="https://soundcloud.com/etdru" target="_blank">etdru</a></p></div>
       </li>
+      <li><icon data="@/assets/icons/bandcamp.svg" width="200" height="200" original/>
+        <div><p>Bandcamp</p> <p><a href="https://bandcamp.com/chrtrx" target="_blank">chrtrx</a></p></div>
+      </li>
     </ul>
 
     <h2>I am also on</h2>
@@ -69,9 +75,6 @@
       </li>
       <li><icon data="@/assets/icons/slack.svg" width="200" height="200" original/>
         <div><p>Slack</p> <p>(I will join your Slack channel)</p></div>
-      </li>
-      <li><icon data="@/assets/icons/signal.svg" width="200" height="200" original/>
-        <div><p>Signal</p> <p>(tied to phone number)</p></div>
       </li>
     </ul>
 

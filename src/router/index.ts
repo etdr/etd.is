@@ -5,8 +5,10 @@ import Base from '../views/Base.vue'
 import Home from '../components/Home.vue'
 import Yield from '@/views/Yield.vue'
 import Posts from '../views/Posts.vue'
-import Meta from '../views/Meta.vue'
+import Metaa from '../views/Metaa.vue'
 import Post from '@/components/posts/Post.vue'
+
+import Site from '@/components/site/Site.vue'
 
 Vue.use(VueRouter)
 
@@ -78,12 +80,13 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/meta',
-    component: Meta,
+    component: Metaa,
     children: [
       {
         path: '/',
         name: 'site',
-        component: () => import(/* webpackChunkName: "about" */ '@/components/site/Site.vue')
+        // component: () => import(/* webpackChunkName: "about" */ '@/components/site/Site.vue')
+        component: Site
       }
     ]
   },

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Navbar/>
-    <transition name="main-slide" mode="out-in">
-      <router-view/>
+    <transition name="main-slide" mode="out-in" duration="300">
+      <router-view />
     </transition>
     <div id="main-flex-spacer"/>
     <Footer/>
@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 @use 'css/vars' as v;
+// @use 'css/transitions';
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
@@ -91,11 +92,11 @@ body {
 }
 
 .main-slide-enter-active {
-  transition: all .2s ease-in;
+  transition: transform .3s ease-in, opacity .3s ease-in;
 }
 
 .main-slide-leave-active {
-  transition: all .2s ease-out;
+  transition: transform .3s ease-out, opacity .3s ease-out;
 }
 
 .main-slide-enter, .main-slide-leave-to {

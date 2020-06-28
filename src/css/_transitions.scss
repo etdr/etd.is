@@ -1,0 +1,12 @@
+.main-slide-enter-active {
+  transition: all 5s ease-in;
+}
+
+.main-slide-leave-active {
+  transition: all 5s;
+}
+
+.main-slide-enter, .main-slide-leave-to {
+  transform: translateX(20px);
+  // opacity: 0;
+}

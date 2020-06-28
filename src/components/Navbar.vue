@@ -1,7 +1,7 @@
 <template>
   <nav>
     <ul>
-      <router-link to="/" class="bc-k-black c-k-white"><li>dte.is</li></router-link>
+      <router-link to="/" class="bc-k-black c-k-white s"><li>dte.is</li></router-link>
       <li class="bc-k-red expandable-li"><router-link to="/about">me</router-link>
         <ul class="bc-k-red">
           <router-link to="/about"><li>about</li></router-link>
@@ -75,11 +75,16 @@ nav {
           color: white;
           font-weight: bold;
 
-        }
+      }
+
+      &.s {
+        flex-basis: 0;
+      }
 
       li {
         //margin: 0 1.4rem;
         padding: 2rem 5rem;
+
       }
     }
 
@@ -91,6 +96,7 @@ nav {
       opacity: 0;
       border-radius: 5px;
       transition: visibility 0s ease-out 0.2s, opacity .2s ease-out;
+      z-index: 3;
 
     }
 

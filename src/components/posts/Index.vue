@@ -38,7 +38,7 @@ export default Vue.extend({
       // thanks to https://michaelnthiessen.com/force-re-render/
       this.ulkey += 1
     },
-    formatDate (d) {
+    formatDate (d: string) {
       const date = new Date(d)
       return `${date.getFullYear().toString()} ${this.months[date.getMonth()]} ${date.getDate().toString()}`
     }

@@ -11,6 +11,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'posts',
+  // title: 'etd.is / Posts',
   computed: {
     onIndex: function () { return this.$route.path === '/posts' }
   }

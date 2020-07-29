@@ -30,6 +30,10 @@ div.base-div {
     @extend .ts-k-red;
     // text-shadow: -2rem 2rem 0 red;
   }
+
+  h2 {
+    font-size: 4rem;
+  }
 }
 
 </style>

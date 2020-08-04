@@ -54,14 +54,14 @@ const routes: Array<RouteConfig> = [
       {
         path: 'developer',
         name: 'yield-js',
-        component: () => import(/* webpackChunkName: "yield-js" */ '@/components/yield/JS.vue'),
-        redirect: { name: 'yield-index' }
+        component: () => import(/* webpackChunkName: "yield-js" */ '@/components/yield/JS.vue')
+        // redirect: { name: 'yield-index' }
       },
       {
         path: 'data-scientist',
         name: 'yield-ds',
-        component: () => import(/* webpackChunkName: "yield-ds" */ '@/components/yield/Data.vue'),
-        redirect: { name: 'yield-index' }
+        component: () => import(/* webpackChunkName: "yield-ds" */ '@/components/yield/Data.vue')
+        // redirect: { name: 'yield-index' }
       },
       {
         path: 'quasiacademecian',

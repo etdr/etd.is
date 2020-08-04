@@ -11,7 +11,7 @@
 
     <p>As an undergraduate I studied cognitive science and philosophy of science at Indiana University (Bloomington) from '07 through '011. Following this, from mid-2013 to early '016 I lived in the Netherlands earning a <a href="https://msclogic.illc.uva.nl/" target="_blank">MSc in Logic</a> from the University of Amsterdam.</p>
 
-    <p>Since graduating from my master's program I've more or less spent the time around Indianapolis trying to work out what my next steps will be.</p>
+    <p>Since graduating from my master's program I've more or less spent the time around Indianapolis trying to work out what my next steps will be. Currently I am teaching web development part-time at <a href="https://elevenfifty.org/" target="_blank">Eleven Fifty Academy</a>.</p>
 
     <p>I have a cat named Atsuo Toggle.</p>
     <img src="@/assets/img/a4.gif"/>

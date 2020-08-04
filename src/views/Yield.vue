@@ -1,7 +1,6 @@
 <template>
   <div id="yield-div">
-    <h1>New portfolio under construction</h1>
-    <p>For now, please see the portfolio on my old site at <a href="https://www.dte.li/yield/portfolio.html">dte.li/yield/portfolio.html</a>.</p>
+    <p>etd is a</p>
     <router-view/>
   </div>
 </template>

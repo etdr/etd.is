@@ -28,7 +28,6 @@
     "requirejs": "^2.3.6",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
-    "vue-markdown-loader": "file:../../repos/vue-markdown-loader",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",
     "vue-svgicon": "^4.0.0-alpha.3"

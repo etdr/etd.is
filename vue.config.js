@@ -13,6 +13,8 @@ const markdownItEmoji = require('markdown-it-emoji')
 const markdownItMark = require('markdown-it-mark')
 const markdownItAttrs = require('markdown-it-attrs')
 
+const path = require('path')
+
 // const fm = require('front-matter')
 
 // const markdown = markdownIt({
@@ -110,5 +112,15 @@ module.exports = {
         // }
       })
     // console.log(config.module)
+
+    config.plugin('copy')
+      .tap(args => {
+        args[0].push({
+          from: path.resolve(__dirname, 'src/assets'),
+          to: path.resolve(__dirname, 'disc/assets'),
+          toType: 'dir'
+        })
+        return args
+      })
   }
 }

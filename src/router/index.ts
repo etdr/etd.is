@@ -66,8 +66,8 @@ const routes: Array<RouteConfig> = [
       {
         path: 'quasiacademecian',
         name: 'yield-thesis',
-        component: () => import(/* webpackChunkName: "yield-thesis" */ '@/components/yield/Thesis.vue'),
-        redirect: { name: 'yield-index' }
+        component: () => import(/* webpackChunkName: "yield-thesis" */ '@/components/yield/Thesis.vue')
+        // redirect: { name: 'yield-index' }
       },
       {
         path: 'musician',
